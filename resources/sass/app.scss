@@ -1,8 +1,22 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Utilities
+@import './utilities/variables';
+@import './utilities/functions';
+@import './utilities/mixins';
 
-// Variables
-@import 'variables';
+// Base
+@import './base/typography';
+@import './base/base';
 
-// Bootstrap
+// Components
+
+// Layouts
+@import './layout/navigation';
+
+// Pages
+@import './pages/user';
+
+// Themes
+
+
+// Vendors
 @import '~bootstrap/scss/bootstrap';
