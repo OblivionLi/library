@@ -203,18 +203,24 @@ export default {
         },
         loading: false,
         showError: "",
-        updateError: []
+        updateError: [],
+        isLoggedIn: true
     }),
 
-    computed: {
-        console: () => console
-    },
+    created() {
+        this.loggedIn();
 
-    mounted() {
-        this.showUser();
+        if (this.isLoggedIn) {
+            this.showUser();
+        }
     },
 
     methods: {
+        loggedIn() {
+            !this.$store.getters["userAuth/userInfo"] && this.$router.push('/');
+            this.isLoggedIn = false;
+        },
+
         async showUser() {
             this.user.id = this.$store.getters["userAuth/userInfo"].id;
             this.showError = "";
